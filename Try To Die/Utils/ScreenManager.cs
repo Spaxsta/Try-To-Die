@@ -46,7 +46,7 @@ namespace Try_To_Die.Utils
 
         public void Initialise()
         {
-            currentScreen = new SplashScreen();
+            currentScreen = new TitleScreen();      
         }
 
         public void ChangeScreen(GameScreen gameScreen)
