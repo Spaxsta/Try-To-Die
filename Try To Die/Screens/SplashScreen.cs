@@ -25,22 +25,19 @@ namespace Try_To_Die.Screens
             // above 1/2 way up to make room for the Text.
 
             // The logo dimensions are the (screen height / 3 * screen height / 3).
-            int logoSize = ScreenManager.Instance.Dimensions.Height / 3;
 
-            Point topLeftPosition = new Point(
-                (ScreenManager.Instance.Dimensions.Width / 2) - (logoSize / 2),
-                (ScreenManager.Instance.Dimensions.Height / 2) - 4 * (logoSize / 5));
+            Point topLeftPosition = new Point(0, 0);
 
             Point heightAndWidth = new Point(
-                logoSize,
-                logoSize);
+                ScreenManager.Instance.Dimensions.Width,
+                ScreenManager.Instance.Dimensions.Width);
 
             // The rectangle that the logo fills.
             logoPosition = new Rectangle(
                 topLeftPosition,
                 heightAndWidth);
 
-            logo = Content.Load<Texture2D>("Logos/logo");
+            logo = Content.Load<Texture2D>("Loading");
         }
 
         public override void Update(GameTime gameTime)

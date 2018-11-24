@@ -41,12 +41,20 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Core\AnimationFrame.cs" />
+    <Compile Include="Controllers\Controller.cs" />
+    <Compile Include="Controllers\GameController.cs" />
+    <Compile Include="Core\Animation.cs" />
+    <Compile Include="Core\Player.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screens\LevelScreen.cs" />
     <Compile Include="Screens\TitleScreen.cs" />
     <Compile Include="Screens\SplashScreen.cs" />
+    <Compile Include="Utils\Entity.cs" />
+    <Compile Include="Utils\MoveCommand.cs" />
     <Compile Include="Utils\ScreenManager.cs" />
     <Compile Include="Utils\GameScreen.cs" />
   </ItemGroup>
