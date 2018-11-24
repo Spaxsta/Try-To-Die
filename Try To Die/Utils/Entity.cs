@@ -25,12 +25,13 @@ namespace Try_To_Die.Utils
         Animation RunDown;
         List<Animation> animations = new List<Animation>();
 
-        protected int health;
+        public int health;
         protected int speed;
         protected int defense;
         protected int magicResistance;
 
         public String Name { get; protected set; }
+
 
         public Rectangle SpritePosition { get; set; }
 

@@ -26,6 +26,11 @@ namespace Try_To_Die.Screens
             controller.Update(player);
 
             player.Update(ScreenManager.Instance.Dimensions, gameTime, Content);
+
+            if(player.health <= 0)
+            {
+                ScreenManager.Instance.ChangeScreen(new TitleScreen());
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch)

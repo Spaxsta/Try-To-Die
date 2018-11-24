@@ -33,6 +33,7 @@ namespace Try_To_Die.Core
             if (SpritePosition.Left < 0)
             {
                 MoveCommand.MoveRight(this, Math.Abs(0 - SpritePosition.Left));
+                health = 0;
             }
 
             if (SpritePosition.Top < 0)
@@ -49,6 +50,7 @@ namespace Try_To_Die.Core
             {
                 MoveCommand.MoveUp(this, Math.Abs(ScreenManager.Instance.Dimensions.Height - SpritePosition.Bottom));
             }
+
             LoadContent(content);
         }
 
