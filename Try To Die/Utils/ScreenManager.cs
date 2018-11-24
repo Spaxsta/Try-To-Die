@@ -19,7 +19,6 @@ namespace Try_To_Die.Utils
         public ContentManager Content { get; private set; }
         GameScreen currentScreen;
 
-
         public static ScreenManager Instance
         {
             get
