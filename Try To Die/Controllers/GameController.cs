@@ -12,11 +12,25 @@ namespace Try_To_Die.Controllers
     public class GameController : Controller
     {
         int delta = 10; //speed at which the player moves
+        double timer = 0;
+        double jumpTime = 0.4;
 
-        public override void Update(Entity entity)
+        public override void Update(Entity entity, GameTime gameTime)
         {
             UseControllerInput(entity);
-            UseKeyboardInputs(entity);
+            UseKeyboardInputs(entity, gameTime);
+            if(timer >= 0)
+            {
+                if (timer > jumpTime/2)
+                {
+                    MoveCommand.MoveUp(entity, delta);
+                    
+                } else
+                {
+                    MoveCommand.MoveDown(entity, delta);
+                }
+                timer -= gameTime.ElapsedGameTime.TotalSeconds;
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -27,7 +41,7 @@ namespace Try_To_Die.Controllers
         {
         }
 
-        private void UseKeyboardInputs(Entity entity)
+        private void UseKeyboardInputs(Entity entity, GameTime gameTime)
         {
             if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
@@ -38,15 +52,14 @@ namespace Try_To_Die.Controllers
             {
                 MoveCommand.MoveLeft(entity, delta);
             }
-
-            if (Keyboard.GetState().IsKeyDown(Keys.W))
+            if (Keyboard.GetState().IsKeyDown(Keys.W) && timer <= 0)
             {
-                MoveCommand.MoveUp(entity, delta);
+                timer = jumpTime;
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.S))
             {
-                MoveCommand.MoveDown(entity, delta);
+                //MoveCommand.MoveDown(entity, delta);
             }
         }
     }

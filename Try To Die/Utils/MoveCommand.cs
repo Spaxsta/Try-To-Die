@@ -49,5 +49,6 @@ namespace Try_To_Die.Utils
                 sprite.SpritePosition.Height
             );
         }
+
     }
 }

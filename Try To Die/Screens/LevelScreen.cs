@@ -23,7 +23,7 @@ namespace Try_To_Die.Screens
 
         public override void Update(GameTime gameTime)
         {
-            controller.Update(player);
+            controller.Update(player, gameTime);
 
             player.Update(ScreenManager.Instance.Dimensions, gameTime, Content);
 

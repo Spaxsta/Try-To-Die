@@ -7,7 +7,7 @@ namespace Try_To_Die.Controllers
 {
     public abstract class Controller
     {
-        public abstract void Update(Entity entity);
+        public abstract void Update(Entity entity, GameTime gameTime);
 
         public abstract void Draw(SpriteBatch spriteBatch);
     }

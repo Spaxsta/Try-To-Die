@@ -19,7 +19,7 @@ namespace Try_To_Die.Screens
             base.LoadContent();
 
             // We only want to spend 4 seconds on the splash screen.
-            timer = 4;
+            timer = 1;
 
             // The logo should appear in the centre of the screen, and slightly
             // above 1/2 way up to make room for the Text.
