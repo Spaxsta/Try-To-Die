@@ -51,6 +51,7 @@ namespace Try_To_Die.Core
                 MoveCommand.MoveUp(this, Math.Abs(ScreenManager.Instance.Dimensions.Height - SpritePosition.Bottom));
             }
 
+
             LoadContent(content);
         }
 
