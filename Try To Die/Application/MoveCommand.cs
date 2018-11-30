@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 
-namespace Try_To_Die.Utils
+namespace Try_To_Die.Application
 {
 
     /// <summary>

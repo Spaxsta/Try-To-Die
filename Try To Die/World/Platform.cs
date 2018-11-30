@@ -1,5 +1,4 @@
-﻿using Grimthole.Interfaces;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -8,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Try_To_Die.LevelObjects
+namespace Try_To_Die.World
 {
-    class Platform : ISprite
+    class Platform : Fixture
     {
         protected Texture2D platformSprite;
         public Rectangle SpritePosition { get; set; }
