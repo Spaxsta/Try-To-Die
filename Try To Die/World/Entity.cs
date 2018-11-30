@@ -13,6 +13,8 @@ namespace Try_To_Die.World
     {
         protected String name;
 
+        public Texture2D texture;
+
         public String Name { get; protected set; }
 
         public Rectangle SpritePosition { get; set; }
@@ -25,20 +27,14 @@ namespace Try_To_Die.World
             SpritePosition = new Rectangle((int)coords.X, (int)coords.Y, width, height);
         }
 
-        public void LoadContent(ContentManager content)
-        {
-            characterSheetTexture = content.Load<Texture2D>(name);
-            characterSilhouette = content.Load<Texture2D>("Sprites/man1");
-
-        }
+        public abstract void LoadContent(ContentManager content);
 
         public abstract void Update(Rectangle windowDimensions, GameTime gt, ContentManager content);
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
-            var sourceRectangle = currentAnimation.CurrentRectangle;
-            spriteBatch.Draw(characterSilhouette, SpritePosition, Color.White);
+            spriteBatch.Draw(texture, SpritePosition, Color.White);
             spriteBatch.End();
         }
     }

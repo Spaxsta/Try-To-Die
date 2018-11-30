@@ -4,8 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using Try_To_Die.Controllers;
-using Try_To_Die.Player;
-using Try_To_Die.world;
+using Try_To_Die.World;
 
 namespace Try_To_Die.Controllers
 {
@@ -15,7 +14,7 @@ namespace Try_To_Die.Controllers
         double timer = 0;
         double jumpTime = 0.4;
 
-        public override void Update(Entity entity, GameTime gameTime, List<ISprite> sprites)
+        public override void Update(Entity entity, GameTime gameTime, List<Entity> sprites)
         {
             UseControllerInput(entity);
             UseKeyboardInputs(entity, gameTime, sprites);
@@ -51,7 +50,7 @@ namespace Try_To_Die.Controllers
         {
         }
 
-        Boolean CheckLeftCollision(Entity player, List<ISprite> sprites)
+        Boolean CheckLeftCollision(Entity player, List<Entity> sprites)
         {
             foreach(var s in sprites)
             {
@@ -66,7 +65,7 @@ namespace Try_To_Die.Controllers
             return true;
         }
 
-        Boolean CheckRightCollision(Entity player, List<ISprite> sprites)
+        Boolean CheckRightCollision(Entity player, List<Entity> sprites)
         {
             foreach (var s in sprites)
             {
@@ -81,7 +80,7 @@ namespace Try_To_Die.Controllers
             return true;
         }
 
-        Boolean CheckDownCollision(Entity player, List<ISprite> sprites)
+        Boolean CheckDownCollision(Entity player, List<Entity> sprites)
         {
             foreach (var s in sprites)
             {
@@ -96,7 +95,7 @@ namespace Try_To_Die.Controllers
             return true;
         }
 
-        Boolean CheckUpCollision(Entity player, List<ISprite> sprites)
+        Boolean CheckUpCollision(Entity player, List<Entity> sprites)
         {
             foreach (var s in sprites)
             {
@@ -115,7 +114,7 @@ namespace Try_To_Die.Controllers
         {
         }
 
-        private void UseKeyboardInputs(Entity entity, GameTime gameTime, List<ISprite> sprites)
+        private void UseKeyboardInputs(Entity entity, GameTime gameTime, List<Entity> sprites)
         {
             if (Keyboard.GetState().IsKeyDown(Keys.D) && CheckRightCollision(entity, sprites))
             {

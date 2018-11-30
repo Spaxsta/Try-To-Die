@@ -17,6 +17,7 @@ namespace Try_To_Die
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            graphics.GraphicsProfile = GraphicsProfile.HiDef;
             this.IsMouseVisible = true;
         }
 

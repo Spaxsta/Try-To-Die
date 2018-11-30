@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Try_To_Die.Player
+namespace Try_To_Die.World
 {
     public class BodyPart
     {

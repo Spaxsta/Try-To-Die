@@ -1,11 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
-using Try_To_Die.World;
+using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Try_To_Die.Controllers;
+using Try_To_Die.Application;
 
-namespace Try_To_Die.Player
+namespace Try_To_Die.World
 {
     public class Player : Entity
     {
@@ -14,8 +18,11 @@ namespace Try_To_Die.Player
         readonly int experience = 0;
         public Rectangle pos;
 
+        protected Texture2D playerSprite;
 
-        public int Speed { get; }
+        public int speed { get; }
+
+        public int health { get; set; }
 
         // A list of all attacks the player knows.
 
@@ -27,9 +34,14 @@ namespace Try_To_Die.Player
             pos = new Rectangle(ScreenManager.Instance.Dimensions.Width / 2 - ScreenManager.Instance.TileSize, ScreenManager.Instance.Dimensions.Height / 2 - ScreenManager.Instance.TileSize, SpritePosition.Width, SpritePosition.Height);
         }
 
+        public override void LoadContent(ContentManager content)
+        {
+            texture = content.Load<Texture2D>("Sprites/man1");
+        }
+
+
         public override void Update(Rectangle windowDimensions, GameTime gt, ContentManager content)
         {
-            currentAnimation = IdleFront;
             if (SpritePosition.Left < 0)
             {
                 MoveCommand.MoveRight(this, Math.Abs(0 - SpritePosition.Left));

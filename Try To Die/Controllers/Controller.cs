@@ -1,5 +1,4 @@
-﻿using Grimthole.Interfaces;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using Try_To_Die.World;

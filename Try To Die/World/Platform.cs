@@ -14,9 +14,9 @@ namespace Try_To_Die.World
         protected Texture2D platformSprite;
         public Rectangle SpritePosition { get; set; }
 
-        public Platform(Rectangle SpritePos)
+        public Platform(String name, Vector2 coords, int width, int height) : base(name, coords, width, height)
         {
-            SpritePosition = SpritePos;
+            SpritePosition = new Rectangle((int)coords.X, (int)coords.Y, width, height);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -26,14 +26,15 @@ namespace Try_To_Die.World
             spriteBatch.End();
         }
 
-        public void LoadContent(ContentManager content)
+        public override void LoadContent(ContentManager content)
         {
-            platformSprite = content.Load<Texture2D>("Loading");
+            texture = content.Load<Texture2D>("Sprites/platformSprite");
         }
 
-        public void Update(Rectangle windowDimensions, GameTime gt, ContentManager content)
+        public override void Update(Rectangle windowDimensions, GameTime gt, ContentManager content)
         {
-            throw new NotImplementedException();
+
         }
+
     }
 }
