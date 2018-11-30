@@ -1,7 +1,8 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
+using Try_To_Die.World;
 
-namespace Try_To_Die.Utils
+namespace Try_To_Die.Controllers
 {
 
     /// <summary>

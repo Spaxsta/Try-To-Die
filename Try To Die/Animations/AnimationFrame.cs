@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Try_To_Die.Core
+namespace Try_To_Die.Animations
 {
     public class AnimationFrame
     {

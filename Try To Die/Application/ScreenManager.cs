@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Try_To_Die.Screens;
 
-namespace Try_To_Die.Utils
+namespace Try_To_Die.Application
 {
     /// <summary>
     /// This Screen Manager switches between the relevant screens in the game.

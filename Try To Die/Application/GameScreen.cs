@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Try_To_Die.Utils
+namespace Try_To_Die.Application
 {
     public abstract class GameScreen
     {

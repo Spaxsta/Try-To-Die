@@ -25,3 +25,6 @@ C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\obj\x86\Debug\Try_To_D
 C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\obj\x86\Debug\Try To Die.exe
 C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\obj\x86\Debug\Try To Die.pdb
 C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\BackGround.xnb
+C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Sprites\man1.xnb
+C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Sprites\platformSprite.xnb
+C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Loading.xnb

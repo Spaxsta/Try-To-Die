@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Logos/logo.png</SourceFile>
-  <SourceTime>2018-11-23T18:47:48.2954027+13:00</SourceTime>
+  <SourceTime>2018-12-01T10:56:11.7712878+13:00</SourceTime>
   <DestFile>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/bin/Windows/Logos/logo.xnb</DestFile>
-  <DestTime>2018-11-24T16:28:17.9800397+13:00</DestTime>
+  <DestTime>2018-12-01T11:07:45.1840577+13:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-02T04:05:36+13:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

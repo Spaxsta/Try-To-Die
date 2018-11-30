@@ -1,6 +1,6 @@
 ﻿using System;
 
-using Try_To_Die.Utils;
+using Try_To_Die.Application;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;

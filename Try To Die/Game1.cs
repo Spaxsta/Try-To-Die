@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Try_To_Die.Utils;
+using Try_To_Die.Application;
 
 namespace Try_To_Die
 {
@@ -17,6 +17,7 @@ namespace Try_To_Die
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            graphics.GraphicsProfile = GraphicsProfile.HiDef;
             this.IsMouseVisible = true;
         }
 

@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Try_To_Die.Utils;
-using Try_To_Die.Core;
+using Try_To_Die.Application;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Try_To_Die.Controllers;
-using Try_To_Die.LevelObjects;
-using Grimthole.Interfaces;
+using Try_To_Die.World;
 
 namespace Try_To_Die.Screens
 {
@@ -17,15 +15,15 @@ namespace Try_To_Die.Screens
         Platform platform;
         Platform platform2;
         Controller controller;
-        List<ISprite> sprites = new List<ISprite>();
+        List<Entity> sprites = new List<Entity>();
 
         public override void LoadContent()
         {
             base.LoadContent();
             player = new Player(new Vector2(500, 500));
 
-            platform = new Platform(new Rectangle(700, 800, 200, 100));
-            platform2 = new Platform(new Rectangle(600, 900, 100, 100));
+            platform = new Platform("Platform", new Vector2(700, 800), 100, 100);
+            platform2 = new Platform("Platform", new Vector2(600, 900), 100, 100);
             sprites.Add(platform);
             sprites.Add(platform2);
             player.LoadContent(Content);
