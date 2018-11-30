@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
-using Try_To_Die.Utils;
+using Try_To_Die.World;
 
-namespace Try_To_Die.Core
+namespace Try_To_Die.Player
 {
     public class Player : Entity
     {

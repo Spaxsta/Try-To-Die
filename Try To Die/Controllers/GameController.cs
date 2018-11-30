@@ -1,12 +1,11 @@
-﻿
-using Grimthole.Interfaces;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using Try_To_Die.Controllers;
-using Try_To_Die.Utils;
+using Try_To_Die.Player;
+using Try_To_Die.world;
 
 namespace Try_To_Die.Controllers
 {

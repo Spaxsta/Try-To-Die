@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Try_To_Die.Utils;
-using Try_To_Die.Core;
+using Try_To_Die.Player;
+using Try_To_Die.Application;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Try_To_Die.Controllers;
-using Try_To_Die.LevelObjects;
-using Grimthole.Interfaces;
+using Try_To_Die.WOrld;
 
 namespace Try_To_Die.Screens
 {
