@@ -14,6 +14,7 @@ namespace Try_To_Die.Controllers
         double speed = 10; //speed at which the player moves
         double timer = 0;
         double jumpTime = 0.4;
+        double distanceFallen = 0;
         SoundEffect jumpSound;
         Boolean moving = false;
 
@@ -36,7 +37,7 @@ namespace Try_To_Die.Controllers
                 {
                     if (CheckUpCollision(entity, sprites))
                     {
-                        MoveCommand.MoveUp(entity, (int)speed);
+                        MoveCommand.MoveUp(entity, 10);
                     }
                     else
                     {
@@ -46,14 +47,25 @@ namespace Try_To_Die.Controllers
                 {
                     if (CheckDownCollision(entity, sprites))
                     {
-                        MoveCommand.MoveDown(entity, (int)speed);
+                        MoveCommand.MoveDown(entity, 10);
                     }
                 }
                 timer -= gameTime.ElapsedGameTime.TotalSeconds;
             }
             else if (CheckDownCollision(entity, sprites))
             {
-                MoveCommand.MoveDown(entity, (int)speed);
+                distanceFallen += 10;
+                MoveCommand.MoveDown(entity, 10);
+            }
+            else 
+            {
+                if (distanceFallen > 200)
+                {
+                    entity.PlayJumpSound();
+                    entity.health = 0;
+                }
+     
+                distanceFallen = 0;
             }
         }
 
@@ -95,9 +107,9 @@ namespace Try_To_Die.Controllers
         {
             foreach (var s in sprites)
             {
-                if (player.SpritePosition.Left < s.SpritePosition.Right - speed && player.SpritePosition.Top < s.SpritePosition.Bottom && player.SpritePosition.Right > s.SpritePosition.Left + speed && player.SpritePosition.Bottom > s.SpritePosition.Top)
+                if (player.SpritePosition.Left < s.SpritePosition.Right - speed && player.SpritePosition.Top < s.SpritePosition.Bottom && player.SpritePosition.Right > s.SpritePosition.Left + speed && player.SpritePosition.Bottom > s.SpritePosition.Top - 10)
                 {
-                    if (player.SpritePosition.Bottom < s.SpritePosition.Bottom)
+                    if (player.SpritePosition.Bottom  < s.SpritePosition.Bottom)
                     {
                         return false;
                     }
@@ -127,6 +139,7 @@ namespace Try_To_Die.Controllers
 
         private void UseKeyboardInputs(Entity entity, GameTime gameTime, List<Entity> sprites)
         {
+            moving = false;
             if (Keyboard.GetState().IsKeyDown(Keys.D) && CheckRightCollision(entity, sprites))
             {
                 MoveCommand.MoveRight(entity, (int)speed);
@@ -136,7 +149,7 @@ namespace Try_To_Die.Controllers
                 }
             }
 
-            else if (Keyboard.GetState().IsKeyDown(Keys.A) && CheckLeftCollision(entity, sprites))
+            if (Keyboard.GetState().IsKeyDown(Keys.A) && CheckLeftCollision(entity, sprites))
             {
                 MoveCommand.MoveLeft(entity, (int)speed);
                 moving = true;
@@ -144,20 +157,19 @@ namespace Try_To_Die.Controllers
                     entity.speed+=0.4;
                 }
             }
-            else if (Keyboard.GetState().IsKeyDown(Keys.W) && timer <= 0)
+
+            if (Keyboard.GetState().IsKeyDown(Keys.W) && timer <= 0 && !CheckDownCollision(entity, sprites))
             {
                 entity.PlayJumpSound();
-                timer = jumpTime;
-                moving = true;
+                    timer = jumpTime;
+                
             }
 
-            else if (Keyboard.GetState().IsKeyDown(Keys.S))
+            if (Keyboard.GetState().IsKeyDown(Keys.S))
             {
                 //MoveCommand.MoveDown(entity, speed);
             }
-            else{
-                moving = false;
-            }               
+
         }
     }
 }

@@ -24,7 +24,6 @@ namespace Try_To_Die.World
 
         public int speed { get; }
 
-        public int health { get; set; }
 
         // A list of all attacks the player knows.
 

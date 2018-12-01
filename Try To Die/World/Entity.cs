@@ -17,6 +17,8 @@ namespace Try_To_Die.World
 
         public double speed {get; set;}
 
+        public double health { get; set; }
+
         public String Name { get; protected set; }
 
         public Rectangle SpritePosition { get; set; }
