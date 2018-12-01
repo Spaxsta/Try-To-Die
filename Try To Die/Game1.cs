@@ -18,7 +18,7 @@ namespace Try_To_Die
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             graphics.GraphicsProfile = GraphicsProfile.HiDef;
-            this.IsMouseVisible = true;
+            //this.IsMouseVisible = true;
         }
 
         /// <summary>
@@ -81,7 +81,6 @@ namespace Try_To_Die
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.White);
-
             // TODO: Add your drawing code here
             ScreenManager.Instance.Draw(spriteBatch);
 

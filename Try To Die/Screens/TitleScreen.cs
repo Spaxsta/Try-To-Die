@@ -6,20 +6,24 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Try_To_Die.Screens;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Try_To_Die.Screens
 {
     public class TitleScreen : GameScreen
     {
         Texture2D BackGround;
+        Texture2D mouse;
         Rectangle BackGroundPos;
         Rectangle play = new Rectangle(500, 400, 500, 200);
+        SoundEffect  buttonClick;
 
         public override void LoadContent()
         {
             base.LoadContent();
 
-
+            buttonClick = Content.Load<SoundEffect>("Menu/ButtonClick");
             Point topLeftPosition = new Point(0, 0);
 
             Point heightAndWidth = new Point(
@@ -32,6 +36,7 @@ namespace Try_To_Die.Screens
                 heightAndWidth);
 
             BackGround = Content.Load<Texture2D>("Menu/BackGround");
+            mouse = Content.Load<Texture2D>("Menu/Cursor1");
         }
 
         public override void Update(GameTime gameTime)
@@ -42,15 +47,17 @@ namespace Try_To_Die.Screens
             {
                 if (mouseClick.LeftButton == ButtonState.Pressed)
                 {
+                    buttonClick.Play();
                     ScreenManager.Instance.ChangeScreen(new SplashScreen());
                 }
             }
         }
 
         public override void Draw(SpriteBatch spriteBatch)
-        {
+        {   
             spriteBatch.Begin();
             spriteBatch.Draw(BackGround, BackGroundPos, Color.White);
+            spriteBatch.Draw(mouse, new Rectangle(Mouse.GetState().X, Mouse.GetState().Y, 20, 20), Color.White);
             spriteBatch.End();
         }
     }

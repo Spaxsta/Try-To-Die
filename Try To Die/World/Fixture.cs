@@ -9,10 +9,9 @@ namespace Try_To_Die.World
 {
     public abstract class Fixture : Entity
     {
-        protected Fixture(String name, Vector2 coords, int width, int height) : base(name, coords, width, height)
+        protected Fixture(String name, Rectangle spritePos) : base(name, spritePos)
         {
-            this.name = name;
-            SpritePosition = new Rectangle((int)coords.X, (int)coords.Y, width, height);
+            SpritePosition = spritePos;
         }
     }
 }

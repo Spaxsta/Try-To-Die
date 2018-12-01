@@ -12,20 +12,20 @@ namespace Try_To_Die.Screens
     public class LevelScreen : GameScreen
     {
         Player player;
-        Platform platform;
-        Platform platform2;
         Controller controller;
         List<Entity> sprites = new List<Entity>();
 
         public override void LoadContent()
         {
             base.LoadContent();
-            player = new Player(new Vector2(500, 500));
+            player = new Player(new Rectangle(500, 500, 50, 50));
 
-            platform = new Platform("Platform", new Vector2(700, 800), 100, 100);
-            platform2 = new Platform("Platform", new Vector2(600, 900), 100, 100);
+            Platform platform = new Platform("Platform", new Rectangle(700, 800, 100, 30));
+            Platform platform2 = new Platform("Platform", new Rectangle(600, 900, 100, 30));
+            Platform platform3 = new Platform("Platform", new Rectangle(550, 700, 100, 30));
             sprites.Add(platform);
             sprites.Add(platform2);
+            sprites.Add(platform3);
             player.LoadContent(Content);
             foreach (var s in sprites)
             {

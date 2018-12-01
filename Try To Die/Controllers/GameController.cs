@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using Try_To_Die.Controllers;
 using Try_To_Die.World;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Try_To_Die.Controllers
 {
@@ -13,6 +14,8 @@ namespace Try_To_Die.Controllers
         int delta = 10; //speed at which the player moves
         double timer = 0;
         double jumpTime = 0.4;
+        SoundEffect jumpSound;
+
 
         public override void Update(Entity entity, GameTime gameTime, List<Entity> sprites)
         {
@@ -127,6 +130,7 @@ namespace Try_To_Die.Controllers
             }
             if (Keyboard.GetState().IsKeyDown(Keys.W) && timer <= 0)
             {
+                entity.PlayJumpSound();
                 timer = jumpTime;
             }
 

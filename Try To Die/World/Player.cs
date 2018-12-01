@@ -8,15 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Try_To_Die.Controllers;
 using Try_To_Die.Application;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Try_To_Die.World
 {
     public class Player : Entity
     {
-        // All the players stats.
-        readonly int level = 1;
-        readonly int experience = 0;
         public Rectangle pos;
+
+        SoundEffect jump;
 
         protected Texture2D playerSprite;
 
@@ -26,19 +26,23 @@ namespace Try_To_Die.World
 
         // A list of all attacks the player knows.
 
-        public Player(Vector2 coords) : base("Sprites/man1", coords,
-            ScreenManager.Instance.TileSize, ScreenManager.Instance.TileSize)
+        public Player(Rectangle spritePos) : base("Sprites/man1", spritePos)
         {
             health = 100;
             speed = 10; 
-            pos = new Rectangle(ScreenManager.Instance.Dimensions.Width / 2 - ScreenManager.Instance.TileSize, ScreenManager.Instance.Dimensions.Height / 2 - ScreenManager.Instance.TileSize, SpritePosition.Width, SpritePosition.Height);
+            pos = spritePos;
         }
 
         public override void LoadContent(ContentManager content)
         {
             texture = content.Load<Texture2D>("Sprites/man1");
+            jump = content.Load<SoundEffect>("Sprites/jump");
         }
 
+        public override void PlayJumpSound()
+        {
+            jump.Play();
+        }
 
         public override void Update(Rectangle windowDimensions, GameTime gt, ContentManager content)
         {

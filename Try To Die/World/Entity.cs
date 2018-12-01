@@ -21,11 +21,14 @@ namespace Try_To_Die.World
 
 
         // Default Constructor for entities.
-        protected Entity(String name, Vector2 coords, int width, int height)
+        protected Entity(String name, Rectangle spritePos)
         {
             this.name = name;
-            SpritePosition = new Rectangle((int)coords.X, (int)coords.Y, width, height);
+            SpritePosition = spritePos;
         }
+
+        public virtual void PlayJumpSound(){
+}
 
         public abstract void LoadContent(ContentManager content);
 

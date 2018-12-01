@@ -14,9 +14,9 @@ namespace Try_To_Die.World
         protected Texture2D platformSprite;
         public Rectangle SpritePosition { get; set; }
 
-        public Platform(String name, Vector2 coords, int width, int height) : base(name, coords, width, height)
+        public Platform(String name, Rectangle spritePos) : base(name, spritePos)
         {
-            SpritePosition = new Rectangle((int)coords.X, (int)coords.Y, width, height);
+            SpritePosition = spritePos;
         }
 
         public void Draw(SpriteBatch spriteBatch)
