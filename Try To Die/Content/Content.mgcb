@@ -97,3 +97,9 @@
 /processorParam:Quality=Best
 /build:Sprites/jump.wav
 
+#begin Menu/bg.wav
+/importer:WavImporter
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Menu/bg.wav
+

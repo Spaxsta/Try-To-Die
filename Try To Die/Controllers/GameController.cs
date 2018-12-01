@@ -11,24 +11,32 @@ namespace Try_To_Die.Controllers
 {
     public class GameController : Controller
     {
-        int delta = 10; //speed at which the player moves
+        double speed = 10; //speed at which the player moves
         double timer = 0;
         double jumpTime = 0.4;
         SoundEffect jumpSound;
+        Boolean moving = false;
 
 
         public override void Update(Entity entity, GameTime gameTime, List<Entity> sprites)
         {
+            
             UseControllerInput(entity);
             UseKeyboardInputs(entity, gameTime, sprites);
-           
+            speed = entity.speed;
+            if(!moving)
+            {
+                entity.speed = 10;
+            }
+
+
             if(timer >= 0)
             {
                 if (timer > jumpTime/2)
                 {
                     if (CheckUpCollision(entity, sprites))
                     {
-                        MoveCommand.MoveUp(entity, delta);
+                        MoveCommand.MoveUp(entity, (int)speed);
                     }
                     else
                     {
@@ -38,14 +46,14 @@ namespace Try_To_Die.Controllers
                 {
                     if (CheckDownCollision(entity, sprites))
                     {
-                        MoveCommand.MoveDown(entity, delta);
+                        MoveCommand.MoveDown(entity, (int)speed);
                     }
                 }
                 timer -= gameTime.ElapsedGameTime.TotalSeconds;
             }
             else if (CheckDownCollision(entity, sprites))
             {
-                MoveCommand.MoveDown(entity, delta);
+                MoveCommand.MoveDown(entity, (int)speed);
             }
         }
 
@@ -57,7 +65,7 @@ namespace Try_To_Die.Controllers
         {
             foreach(var s in sprites)
             {
-                if(player.SpritePosition.Left < s.SpritePosition.Right && player.SpritePosition.Top < s.SpritePosition.Bottom - delta && player.SpritePosition.Right > s.SpritePosition.Left && player.SpritePosition.Bottom > s.SpritePosition.Top + delta)
+                if(player.SpritePosition.Left < s.SpritePosition.Right && player.SpritePosition.Top < s.SpritePosition.Bottom - speed && player.SpritePosition.Right > s.SpritePosition.Left && player.SpritePosition.Bottom > s.SpritePosition.Top + speed)
                 {
                     if (player.SpritePosition.Left > s.SpritePosition.Left)
                     {
@@ -72,7 +80,7 @@ namespace Try_To_Die.Controllers
         {
             foreach (var s in sprites)
             {
-                if (player.SpritePosition.Left < s.SpritePosition.Right && player.SpritePosition.Top < s.SpritePosition.Bottom - delta && player.SpritePosition.Right > s.SpritePosition.Left && player.SpritePosition.Bottom > s.SpritePosition.Top + delta)
+                if (player.SpritePosition.Left < s.SpritePosition.Right && player.SpritePosition.Top < s.SpritePosition.Bottom - speed && player.SpritePosition.Right > s.SpritePosition.Left && player.SpritePosition.Bottom > s.SpritePosition.Top + speed)
                 {
                     if (player.SpritePosition.Right < s.SpritePosition.Right)
                     {
@@ -87,7 +95,7 @@ namespace Try_To_Die.Controllers
         {
             foreach (var s in sprites)
             {
-                if (player.SpritePosition.Left < s.SpritePosition.Right - delta && player.SpritePosition.Top < s.SpritePosition.Bottom && player.SpritePosition.Right > s.SpritePosition.Left + delta && player.SpritePosition.Bottom > s.SpritePosition.Top)
+                if (player.SpritePosition.Left < s.SpritePosition.Right - speed && player.SpritePosition.Top < s.SpritePosition.Bottom && player.SpritePosition.Right > s.SpritePosition.Left + speed && player.SpritePosition.Bottom > s.SpritePosition.Top)
                 {
                     if (player.SpritePosition.Bottom < s.SpritePosition.Bottom)
                     {
@@ -102,7 +110,7 @@ namespace Try_To_Die.Controllers
         {
             foreach (var s in sprites)
             {
-                if (player.SpritePosition.Left < s.SpritePosition.Right - delta && player.SpritePosition.Top < s.SpritePosition.Bottom + delta && player.SpritePosition.Right > s.SpritePosition.Left + delta && player.SpritePosition.Bottom > s.SpritePosition.Top)
+                if (player.SpritePosition.Left < s.SpritePosition.Right - speed && player.SpritePosition.Top < s.SpritePosition.Bottom + speed && player.SpritePosition.Right > s.SpritePosition.Left + speed && player.SpritePosition.Bottom > s.SpritePosition.Top)
                 {
                     if (player.SpritePosition.Top > s.SpritePosition.Top)
                     {
@@ -121,23 +129,35 @@ namespace Try_To_Die.Controllers
         {
             if (Keyboard.GetState().IsKeyDown(Keys.D) && CheckRightCollision(entity, sprites))
             {
-                MoveCommand.MoveRight(entity, delta);
+                MoveCommand.MoveRight(entity, (int)speed);
+                moving = true;
+                if(entity.speed < 20){
+                    entity.speed+=0.4;
+                }
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.A) && CheckLeftCollision(entity, sprites))
+            else if (Keyboard.GetState().IsKeyDown(Keys.A) && CheckLeftCollision(entity, sprites))
             {
-                MoveCommand.MoveLeft(entity, delta);
+                MoveCommand.MoveLeft(entity, (int)speed);
+                moving = true;
+                if(entity.speed < 20){
+                    entity.speed+=0.4;
+                }
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.W) && timer <= 0)
+            else if (Keyboard.GetState().IsKeyDown(Keys.W) && timer <= 0)
             {
                 entity.PlayJumpSound();
                 timer = jumpTime;
+                moving = true;
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.S))
+            else if (Keyboard.GetState().IsKeyDown(Keys.S))
             {
-                //MoveCommand.MoveDown(entity, delta);
+                //MoveCommand.MoveDown(entity, speed);
             }
+            else{
+                moving = false;
+            }               
         }
     }
 }

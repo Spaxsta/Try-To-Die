@@ -15,6 +15,8 @@ namespace Try_To_Die.World
 
         public Texture2D texture;
 
+        public double speed {get; set;}
+
         public String Name { get; protected set; }
 
         public Rectangle SpritePosition { get; set; }

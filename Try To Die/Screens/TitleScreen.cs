@@ -17,13 +17,15 @@ namespace Try_To_Die.Screens
         Texture2D mouse;
         Rectangle BackGroundPos;
         Rectangle play = new Rectangle(500, 400, 500, 200);
-        SoundEffect  buttonClick;
+        SoundEffect buttonClick;
+        Song bgMusic;
 
         public override void LoadContent()
         {
             base.LoadContent();
 
             buttonClick = Content.Load<SoundEffect>("Menu/ButtonClick");
+            bgMusic = Content.Load<Song>("Menu/bg");
             Point topLeftPosition = new Point(0, 0);
 
             Point heightAndWidth = new Point(
@@ -37,6 +39,10 @@ namespace Try_To_Die.Screens
 
             BackGround = Content.Load<Texture2D>("Menu/BackGround");
             mouse = Content.Load<Texture2D>("Menu/Cursor1");
+
+            MediaPlayer.IsRepeating = true;
+
+            MediaPlayer.Play(bgMusic);
         }
 
         public override void Update(GameTime gameTime)
@@ -49,6 +55,7 @@ namespace Try_To_Die.Screens
                 {
                     buttonClick.Play();
                     ScreenManager.Instance.ChangeScreen(new SplashScreen());
+                    MediaPlayer.Stop();
                 }
             }
         }

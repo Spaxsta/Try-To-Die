@@ -18,6 +18,8 @@ namespace Try_To_Die.World
 
         SoundEffect jump;
 
+        double velocity = 10;
+
         protected Texture2D playerSprite;
 
         public int speed { get; }
