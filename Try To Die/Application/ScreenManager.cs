@@ -48,10 +48,13 @@ namespace Try_To_Die.Application
             currentScreen = new TitleScreen();      
         }
 
-        public void ChangeScreen(GameScreen gameScreen)
+        public void ChangeScreen(GameScreen gameScreen, Boolean load)
         {
             currentScreen = gameScreen;
-            currentScreen.LoadContent();
+            if (load)
+            {
+                currentScreen.LoadContent();
+            }
         }
 
         public void LoadContent(ContentManager content)

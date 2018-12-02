@@ -45,6 +45,7 @@
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Animations\Animation.cs" />
+    <Compile Include="Screens\PauseScreen.cs" />
     <Compile Include="Screens\DeathScreen.cs" />
     <Compile Include="World\Player.cs" />
     <Compile Include="Game1.cs" />

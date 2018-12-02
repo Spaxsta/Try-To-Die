@@ -5,27 +5,26 @@ using Try_To_Die.Application;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Try_To_Die.Screens;
+using Microsoft.Xna.Framework.Input;
 
 namespace Try_To_Die.Screens
 {
-    public class SplashScreen : GameScreen
+    public class PauseScreen : GameScreen
     {
         Texture2D logo;
         Rectangle logoPosition;
         double timer;
+        private LevelScreen levelScreen;
+
+        public PauseScreen(LevelScreen levelScreen)
+        {
+            this.levelScreen = levelScreen;
+        }
 
         public override void LoadContent()
         {
             base.LoadContent();
-
-            // We only want to spend 4 seconds on the splash screen.
-            timer = 1;
-
-            // The logo should appear in the centre of the screen, and slightly
-            // above 1/2 way up to make room for the Text.
-
-            // The logo dimensions are the (screen height / 3 * screen height / 3).
-
+            timer = 0.2;
             Point topLeftPosition = new Point(0, 0);
 
             Point heightAndWidth = new Point(
@@ -37,7 +36,7 @@ namespace Try_To_Die.Screens
                 topLeftPosition,
                 heightAndWidth);
 
-            logo = Content.Load<Texture2D>("Loading");
+            logo = Content.Load<Texture2D>("Logos/logo");
         }
 
         public override void Update(GameTime gameTime)
@@ -46,9 +45,9 @@ namespace Try_To_Die.Screens
             {
                 timer -= gameTime.ElapsedGameTime.TotalSeconds;
             }
-            else
+            else if (Keyboard.GetState().IsKeyDown(Keys.Escape))
             {
-                ScreenManager.Instance.ChangeScreen(new LevelScreen(), true);
+                ScreenManager.Instance.ChangeScreen(levelScreen, false);
             }
         }
 

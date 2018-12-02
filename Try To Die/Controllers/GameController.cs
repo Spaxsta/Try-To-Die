@@ -145,6 +145,10 @@ namespace Try_To_Die.Controllers
         private void UseKeyboardInputs(Entity entity, GameTime gameTime, List<Entity> sprites)
         {
             moving = false;
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
+
+            }
             if (playerIndex == 1)
             {
                 if (Keyboard.GetState().IsKeyDown(Keys.D) && CheckRightCollision(entity, sprites))

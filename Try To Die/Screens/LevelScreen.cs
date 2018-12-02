@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Try_To_Die.Controllers;
 using Try_To_Die.World;
+using Microsoft.Xna.Framework.Input;
 
 namespace Try_To_Die.Screens
 {
@@ -16,10 +17,12 @@ namespace Try_To_Die.Screens
         Controller controller;
         Controller controller2;
         List<Entity> sprites = new List<Entity>();
+        double timer;
 
         public override void LoadContent()
         {
             base.LoadContent();
+            timer = 0;
             player = new Player(new Rectangle(600, 500, 50, 50));
             player2 = new Player(new Rectangle(800,800, 50, 50));
 
@@ -52,9 +55,20 @@ namespace Try_To_Die.Screens
 
             player.Update(ScreenManager.Instance.Dimensions, gameTime, Content);
 
-            if(player.health <= 0)
+            if(timer > 0)
             {
-                ScreenManager.Instance.ChangeScreen(new DeathScreen());
+                timer -= gameTime.ElapsedGameTime.TotalSeconds;
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
+                LevelScreen s = this;
+                ScreenManager.Instance.ChangeScreen(new PauseScreen(s), true);
+                timer = 0.2;
+            }
+
+            if (player.health <= 0)
+            {
+                ScreenManager.Instance.ChangeScreen(new DeathScreen(), true);
             }
         }
 

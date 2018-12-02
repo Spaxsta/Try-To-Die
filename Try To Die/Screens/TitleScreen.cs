@@ -54,7 +54,7 @@ namespace Try_To_Die.Screens
                 if (mouseClick.LeftButton == ButtonState.Pressed)
                 {
                     buttonClick.Play();
-                    ScreenManager.Instance.ChangeScreen(new SplashScreen());
+                    ScreenManager.Instance.ChangeScreen(new SplashScreen(), true);
                     MediaPlayer.Stop();
                 }
             }
