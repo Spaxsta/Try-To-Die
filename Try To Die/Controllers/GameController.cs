@@ -17,6 +17,7 @@ namespace Try_To_Die.Controllers
         double distanceFallen = 0;
         Boolean moving = false;
         int playerIndex;
+        Boolean bouncing = false;
 
         public GameController(int playerIndex)
         {
@@ -35,6 +36,29 @@ namespace Try_To_Die.Controllers
                 entity.speed = 10;
             }
 
+            foreach(Entity s in sprites)
+            {
+                if(s is Spike)
+                {
+                    List<Entity> spike = new List<Entity>();
+                    spike.Add(s);
+                    if(!CheckLeftCollision(entity, spike) || !CheckRightCollision(entity, spike) || !CheckUpCollision(entity, spike) || !CheckDownCollision(entity, spike))
+                    {
+                        entity.health = 0;
+                    }
+                }
+
+                if(s is BouncePad)
+                {
+                    List<Entity> bouncePad = new List<Entity>();
+                    bouncePad.Add(s);
+                    if (!CheckLeftCollision(entity, bouncePad) || !CheckRightCollision(entity, bouncePad) || !CheckUpCollision(entity, bouncePad) || !CheckDownCollision(entity, bouncePad))
+                    {
+                        timer = 0.6;
+                        bouncing = true;
+                    }
+                }
+            }
 
             if(timer >= 0)
             {
@@ -64,12 +88,12 @@ namespace Try_To_Die.Controllers
             }
             else 
             {
-                if (distanceFallen > 200)
+                if (distanceFallen > 200 && !bouncing)
                 {
                     entity.PlayJumpSound();
                     entity.health = 0;
                 }
-     
+                bouncing = false;
                 distanceFallen = 0;
             }
         }
