@@ -31,7 +31,7 @@ namespace Try_To_Die.Screens
             Platform platform3 = new Platform("Platform", new Rectangle(550, 700, 100, 30));
             Platform platform4 = new Platform("Platform", new Rectangle(0, 950, 10000, 30));
             Platform platform5 = new Platform("Platform", new Rectangle(1000, 400, 30, 600));
-            Spike spike = new Spike("Spike", new Rectangle(900, 700, 30, 100));
+            Spike spike = new Spike("Spike", new Rectangle(900, 900, 30, 100));
             sprites.Add(platform);
             sprites.Add(platform2);
             sprites.Add(platform3);
@@ -68,7 +68,7 @@ namespace Try_To_Die.Screens
                 timer = 0.2;
             }
 
-            if (player.health <= 0)
+            if (player.health <= 0 || player2.health <= 0)
             {
                 ScreenManager.Instance.ChangeScreen(new DeathScreen(), true);
             }

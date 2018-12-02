@@ -35,6 +35,18 @@ namespace Try_To_Die.Controllers
                 entity.speed = 10;
             }
 
+            foreach(Entity s in sprites)
+            {
+                if(s is Spike)
+                {
+                    List<Entity> spike = new List<Entity>();
+                    spike.Add(s);
+                    if(!CheckLeftCollision(entity, spike) || !CheckRightCollision(entity, spike) || !CheckUpCollision(entity, spike) || !CheckDownCollision(entity, spike))
+                    {
+                        entity.health = 0;
+                    }
+                }
+            }
 
             if(timer >= 0)
             {
