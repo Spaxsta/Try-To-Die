@@ -15,8 +15,13 @@ namespace Try_To_Die.Controllers
         double timer = 0;
         double jumpTime = 0.4;
         double distanceFallen = 0;
-        SoundEffect jumpSound;
         Boolean moving = false;
+        int playerIndex;
+
+        public GameController(int playerIndex)
+        {
+            this.playerIndex = playerIndex;
+        }
 
 
         public override void Update(Entity entity, GameTime gameTime, List<Entity> sprites)
@@ -140,34 +145,63 @@ namespace Try_To_Die.Controllers
         private void UseKeyboardInputs(Entity entity, GameTime gameTime, List<Entity> sprites)
         {
             moving = false;
-            if (Keyboard.GetState().IsKeyDown(Keys.D) && CheckRightCollision(entity, sprites))
+            if (playerIndex == 1)
             {
-                MoveCommand.MoveRight(entity, (int)speed);
-                moving = true;
-                if(entity.speed < 20){
-                    entity.speed+=0.4;
+                if (Keyboard.GetState().IsKeyDown(Keys.D) && CheckRightCollision(entity, sprites))
+                {
+                    MoveCommand.MoveRight(entity, (int)speed);
+                    moving = true;
+                    if (entity.speed < 20)
+                    {
+                        entity.speed += 0.4;
+                    }
                 }
-            }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.A) && CheckLeftCollision(entity, sprites))
-            {
-                MoveCommand.MoveLeft(entity, (int)speed);
-                moving = true;
-                if(entity.speed < 20){
-                    entity.speed+=0.4;
+                if (Keyboard.GetState().IsKeyDown(Keys.A) && CheckLeftCollision(entity, sprites))
+                {
+                    MoveCommand.MoveLeft(entity, (int)speed);
+                    moving = true;
+                    if (entity.speed < 20)
+                    {
+                        entity.speed += 0.4;
+                    }
                 }
-            }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.W) && timer <= 0 && !CheckDownCollision(entity, sprites))
-            {
-                entity.PlayJumpSound();
+                if (Keyboard.GetState().IsKeyDown(Keys.W) && timer <= 0 && !CheckDownCollision(entity, sprites))
+                {
+                    entity.PlayJumpSound();
                     timer = jumpTime;
-                
-            }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.S))
+                }
+
+            } else if(playerIndex == 2)
             {
-                //MoveCommand.MoveDown(entity, speed);
+                if (Keyboard.GetState().IsKeyDown(Keys.L) && CheckRightCollision(entity, sprites))
+                {
+                    MoveCommand.MoveRight(entity, (int)speed);
+                    moving = true;
+                    if (entity.speed < 20)
+                    {
+                        entity.speed += 0.4;
+                    }
+                }
+
+                if (Keyboard.GetState().IsKeyDown(Keys.J) && CheckLeftCollision(entity, sprites))
+                {
+                    MoveCommand.MoveLeft(entity, (int)speed);
+                    moving = true;
+                    if (entity.speed < 20)
+                    {
+                        entity.speed += 0.4;
+                    }
+                }
+
+                if (Keyboard.GetState().IsKeyDown(Keys.I) && timer <= 0 && !CheckDownCollision(entity, sprites))
+                {
+                    entity.PlayJumpSound();
+                    timer = jumpTime;
+
+                }
             }
 
         }

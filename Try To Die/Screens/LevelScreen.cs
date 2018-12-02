@@ -14,6 +14,7 @@ namespace Try_To_Die.Screens
         Player player;
         Player player2;
         Controller controller;
+        Controller controller2;
         List<Entity> sprites = new List<Entity>();
 
         public override void LoadContent()
@@ -33,20 +34,21 @@ namespace Try_To_Die.Screens
             sprites.Add(platform4);
             sprites.Add(platform5);
             sprites.Add(player2);
-            player.LoadContent(Content);
+            sprites.Add(player);
 
             foreach (var s in sprites)
             {
                 s.LoadContent(Content);
             }
-            controller = new GameController();
-
+            controller = new GameController(1);
+            controller2 = new GameController(2);
            
         }
 
         public override void Update(GameTime gameTime)
         {
             controller.Update(player, gameTime, sprites);
+            controller2.Update(player2, gameTime, sprites);
 
             player.Update(ScreenManager.Instance.Dimensions, gameTime, Content);
 
@@ -58,7 +60,6 @@ namespace Try_To_Die.Screens
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            player.Draw(spriteBatch);
             foreach (var s in sprites)
             {
                 s.Draw(spriteBatch);
