@@ -16,6 +16,7 @@ namespace Try_To_Die.Screens
         Player player2;
         Controller controller;
         Controller controller2;
+
         List<Entity> sprites = new List<Entity>();
         double timer;
 
@@ -33,6 +34,7 @@ namespace Try_To_Die.Screens
             Platform platform5 = new Platform("Platform", new Rectangle(1000, 400, 30, 600));
             Spike spike = new Spike("Spike", new Rectangle(900, 900, 30, 100));
             BouncePad bouncePad = new BouncePad("BouncePad", new Rectangle(200, 950, 60, 10));
+            Pillow pillow = new Pillow("Pillow", new Rectangle(300, 920, 30, 20));
             sprites.Add(platform);
             sprites.Add(platform2);
             sprites.Add(platform3);
@@ -42,6 +44,7 @@ namespace Try_To_Die.Screens
             sprites.Add(player);
             sprites.Add(spike);
             sprites.Add(bouncePad);
+            sprites.Add(pillow);
 
             foreach (var s in sprites)
             {
@@ -58,6 +61,20 @@ namespace Try_To_Die.Screens
             controller2.Update(player2, gameTime, sprites);
 
             player.Update(ScreenManager.Instance.Dimensions, gameTime, Content);
+
+            foreach(Entity s in sprites)
+            {
+                if(s is Pillow)
+                {
+                    Pillow p = (Pillow)s;
+                    if (p.holding)
+                    {
+                        Rectangle playerHolding = new Rectangle(player.SpritePosition.X, player.SpritePosition.Y, 30,20);
+                        playerHolding.Offset(-30, 0);
+                        s.SpritePosition = playerHolding;
+                    }
+                }
+            }
 
             if(timer > 0)
             {

@@ -162,6 +162,25 @@ namespace Try_To_Die.Controllers
             return true;
         }
 
+        private void interact(Entity entity, List<Entity> sprites)
+        {
+            foreach(Entity s in sprites)
+            {
+                if(s is Pillow)
+                {
+                    List<Entity> pillow = new List<Entity>();
+                    pillow.Add(s);
+                    if (!CheckRightCollision(entity, pillow) || !CheckLeftCollision(entity, pillow))
+                    {
+                        //entity.PlayJumpSound();
+                        Pillow p = (Pillow)s;
+                        p.holding = true;
+                    }
+                }
+            }
+
+        }
+
         public void UseControllerInput(Entity entity)
         {
         }
@@ -199,6 +218,12 @@ namespace Try_To_Die.Controllers
                 {
                     entity.PlayJumpSound();
                     timer = jumpTime;
+
+                }
+
+                if (Keyboard.GetState().IsKeyDown(Keys.E))
+                {
+                    interact(entity, sprites);
 
                 }
 
