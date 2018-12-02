@@ -47,6 +47,7 @@
     <Compile Include="Animations\Animation.cs" />
     <Compile Include="Screens\PauseScreen.cs" />
     <Compile Include="Screens\DeathScreen.cs" />
+    <Compile Include="World\BouncePad.cs" />
     <Compile Include="World\Spike.cs" />
     <Compile Include="World\Player.cs" />
     <Compile Include="Game1.cs" />

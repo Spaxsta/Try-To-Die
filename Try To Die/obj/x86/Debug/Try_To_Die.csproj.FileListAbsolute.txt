@@ -34,3 +34,4 @@ C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\
 C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\bg.wma
 C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\bg.xnb
 C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Sprites\Spike.xnb
+C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Sprites\BouncePad.xnb

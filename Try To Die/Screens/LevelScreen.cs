@@ -32,6 +32,7 @@ namespace Try_To_Die.Screens
             Platform platform4 = new Platform("Platform", new Rectangle(0, 950, 10000, 30));
             Platform platform5 = new Platform("Platform", new Rectangle(1000, 400, 30, 600));
             Spike spike = new Spike("Spike", new Rectangle(900, 900, 30, 100));
+            BouncePad bouncePad = new BouncePad("BouncePad", new Rectangle(200, 950, 60, 10));
             sprites.Add(platform);
             sprites.Add(platform2);
             sprites.Add(platform3);
@@ -40,6 +41,7 @@ namespace Try_To_Die.Screens
             sprites.Add(player2);
             sprites.Add(player);
             sprites.Add(spike);
+            sprites.Add(bouncePad);
 
             foreach (var s in sprites)
             {
