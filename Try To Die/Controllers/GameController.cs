@@ -11,24 +11,38 @@ namespace Try_To_Die.Controllers
 {
     public class GameController : Controller
     {
-        int delta = 10; //speed at which the player moves
+        double speed = 10; //speed at which the player moves
         double timer = 0;
         double jumpTime = 0.4;
-        SoundEffect jumpSound;
+        double distanceFallen = 0;
+        Boolean moving = false;
+        int playerIndex;
+
+        public GameController(int playerIndex)
+        {
+            this.playerIndex = playerIndex;
+        }
 
 
         public override void Update(Entity entity, GameTime gameTime, List<Entity> sprites)
         {
+            
             UseControllerInput(entity);
             UseKeyboardInputs(entity, gameTime, sprites);
-           
+            speed = entity.speed;
+            if(!moving)
+            {
+                entity.speed = 10;
+            }
+
+
             if(timer >= 0)
             {
                 if (timer > jumpTime/2)
                 {
                     if (CheckUpCollision(entity, sprites))
                     {
-                        MoveCommand.MoveUp(entity, delta);
+                        MoveCommand.MoveUp(entity, 10);
                     }
                     else
                     {
@@ -38,14 +52,25 @@ namespace Try_To_Die.Controllers
                 {
                     if (CheckDownCollision(entity, sprites))
                     {
-                        MoveCommand.MoveDown(entity, delta);
+                        MoveCommand.MoveDown(entity, 10);
                     }
                 }
                 timer -= gameTime.ElapsedGameTime.TotalSeconds;
             }
             else if (CheckDownCollision(entity, sprites))
             {
-                MoveCommand.MoveDown(entity, delta);
+                distanceFallen += 10;
+                MoveCommand.MoveDown(entity, 10);
+            }
+            else 
+            {
+                if (distanceFallen > 200)
+                {
+                    entity.PlayJumpSound();
+                    entity.health = 0;
+                }
+     
+                distanceFallen = 0;
             }
         }
 
@@ -57,7 +82,7 @@ namespace Try_To_Die.Controllers
         {
             foreach(var s in sprites)
             {
-                if(player.SpritePosition.Left < s.SpritePosition.Right && player.SpritePosition.Top < s.SpritePosition.Bottom - delta && player.SpritePosition.Right > s.SpritePosition.Left && player.SpritePosition.Bottom > s.SpritePosition.Top + delta)
+                if(player.SpritePosition.Left < s.SpritePosition.Right && player.SpritePosition.Top < s.SpritePosition.Bottom - speed && player.SpritePosition.Right > s.SpritePosition.Left && player.SpritePosition.Bottom > s.SpritePosition.Top + speed)
                 {
                     if (player.SpritePosition.Left > s.SpritePosition.Left)
                     {
@@ -72,7 +97,7 @@ namespace Try_To_Die.Controllers
         {
             foreach (var s in sprites)
             {
-                if (player.SpritePosition.Left < s.SpritePosition.Right && player.SpritePosition.Top < s.SpritePosition.Bottom - delta && player.SpritePosition.Right > s.SpritePosition.Left && player.SpritePosition.Bottom > s.SpritePosition.Top + delta)
+                if (player.SpritePosition.Left < s.SpritePosition.Right && player.SpritePosition.Top < s.SpritePosition.Bottom - speed && player.SpritePosition.Right > s.SpritePosition.Left && player.SpritePosition.Bottom > s.SpritePosition.Top + speed)
                 {
                     if (player.SpritePosition.Right < s.SpritePosition.Right)
                     {
@@ -87,9 +112,9 @@ namespace Try_To_Die.Controllers
         {
             foreach (var s in sprites)
             {
-                if (player.SpritePosition.Left < s.SpritePosition.Right - delta && player.SpritePosition.Top < s.SpritePosition.Bottom && player.SpritePosition.Right > s.SpritePosition.Left + delta && player.SpritePosition.Bottom > s.SpritePosition.Top)
+                if (player.SpritePosition.Left < s.SpritePosition.Right - speed && player.SpritePosition.Top < s.SpritePosition.Bottom && player.SpritePosition.Right > s.SpritePosition.Left + speed && player.SpritePosition.Bottom > s.SpritePosition.Top - 10)
                 {
-                    if (player.SpritePosition.Bottom < s.SpritePosition.Bottom)
+                    if (player.SpritePosition.Bottom  < s.SpritePosition.Bottom)
                     {
                         return false;
                     }
@@ -102,7 +127,7 @@ namespace Try_To_Die.Controllers
         {
             foreach (var s in sprites)
             {
-                if (player.SpritePosition.Left < s.SpritePosition.Right - delta && player.SpritePosition.Top < s.SpritePosition.Bottom + delta && player.SpritePosition.Right > s.SpritePosition.Left + delta && player.SpritePosition.Bottom > s.SpritePosition.Top)
+                if (player.SpritePosition.Left < s.SpritePosition.Right - speed && player.SpritePosition.Top < s.SpritePosition.Bottom + speed && player.SpritePosition.Right > s.SpritePosition.Left + speed && player.SpritePosition.Bottom > s.SpritePosition.Top)
                 {
                     if (player.SpritePosition.Top > s.SpritePosition.Top)
                     {
@@ -119,25 +144,70 @@ namespace Try_To_Die.Controllers
 
         private void UseKeyboardInputs(Entity entity, GameTime gameTime, List<Entity> sprites)
         {
-            if (Keyboard.GetState().IsKeyDown(Keys.D) && CheckRightCollision(entity, sprites))
+            moving = false;
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
             {
-                MoveCommand.MoveRight(entity, delta);
+
+            }
+            if (playerIndex == 1)
+            {
+                if (Keyboard.GetState().IsKeyDown(Keys.D) && CheckRightCollision(entity, sprites))
+                {
+                    MoveCommand.MoveRight(entity, (int)speed);
+                    moving = true;
+                    if (entity.speed < 20)
+                    {
+                        entity.speed += 0.4;
+                    }
+                }
+
+                if (Keyboard.GetState().IsKeyDown(Keys.A) && CheckLeftCollision(entity, sprites))
+                {
+                    MoveCommand.MoveLeft(entity, (int)speed);
+                    moving = true;
+                    if (entity.speed < 20)
+                    {
+                        entity.speed += 0.4;
+                    }
+                }
+
+                if (Keyboard.GetState().IsKeyDown(Keys.W) && timer <= 0 && !CheckDownCollision(entity, sprites))
+                {
+                    entity.PlayJumpSound();
+                    timer = jumpTime;
+
+                }
+
+            } else if(playerIndex == 2)
+            {
+                if (Keyboard.GetState().IsKeyDown(Keys.L) && CheckRightCollision(entity, sprites))
+                {
+                    MoveCommand.MoveRight(entity, (int)speed);
+                    moving = true;
+                    if (entity.speed < 20)
+                    {
+                        entity.speed += 0.4;
+                    }
+                }
+
+                if (Keyboard.GetState().IsKeyDown(Keys.J) && CheckLeftCollision(entity, sprites))
+                {
+                    MoveCommand.MoveLeft(entity, (int)speed);
+                    moving = true;
+                    if (entity.speed < 20)
+                    {
+                        entity.speed += 0.4;
+                    }
+                }
+
+                if (Keyboard.GetState().IsKeyDown(Keys.I) && timer <= 0 && !CheckDownCollision(entity, sprites))
+                {
+                    entity.PlayJumpSound();
+                    timer = jumpTime;
+
+                }
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.A) && CheckLeftCollision(entity, sprites))
-            {
-                MoveCommand.MoveLeft(entity, delta);
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.W) && timer <= 0)
-            {
-                entity.PlayJumpSound();
-                timer = jumpTime;
-            }
-
-            if (Keyboard.GetState().IsKeyDown(Keys.S))
-            {
-                //MoveCommand.MoveDown(entity, delta);
-            }
         }
     }
 }

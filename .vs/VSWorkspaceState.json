@@ -2,7 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\Try To Die",
-    "\\Try To Die\\Utils"
+    "\\Try To Die\\Application",
+    "\\Try To Die\\Content",
+    "\\Try To Die\\Content\\Sprites",
+    "\\Try To Die\\Controllers",
+    "\\Try To Die\\Screens",
+    "\\Try To Die\\World"
   ],
   "PreviewInSolutionExplorer": false
 }

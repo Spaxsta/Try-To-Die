@@ -48,7 +48,7 @@ namespace Try_To_Die.Screens
             }
             else
             {
-                ScreenManager.Instance.ChangeScreen(new LevelScreen());
+                ScreenManager.Instance.ChangeScreen(new LevelScreen(), true);
             }
         }
 
