@@ -36,3 +36,7 @@ C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\
 C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Sprites\Spike.xnb
 C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Sprites\BouncePad.xnb
 C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Sprites\Pillow.xnb
+C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\ExitButton.xnb
+C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\LocalPlay.xnb
+C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\MultiplayerButton.xnb
+C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\OptionsButton.xnb

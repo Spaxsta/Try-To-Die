@@ -5,16 +5,20 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Logos/logo.png</File>
-    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/BackGround.png</File>
     <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Loading.png</File>
     <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Sprites/man1.png</File>
     <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Sprites/platformSprite.png</File>
-    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/cursor1.png</File>
     <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/buttonClick.wav</File>
     <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Sprites/jump.wav</File>
     <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/bg.wav</File>
     <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Sprites/Spike.png</File>
     <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Sprites/BouncePad.png</File>
     <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Sprites/Pillow.png</File>
+    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/Background.png</File>
+    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/Cursor1.png</File>
+    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/ExitButton.png</File>
+    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/LocalPlay.png</File>
+    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/MultiplayerButton.png</File>
+    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/OptionsButton.png</File>
   </SourceFiles>
 </SourceFileCollection>
