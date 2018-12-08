@@ -21,7 +21,7 @@ namespace Try_To_Die.Screens
         static int buttonWidth = 300;
         static int buttonHeight = 150;
         Dictionary<String, Rectangle> buttons = new Dictionary<String, Rectangle>();
-        //List<Rectangle> buttons = new List<Rectangle>();
+
         Rectangle localButtonPos = new Rectangle(ScreenManager.Instance.Dimensions.Width/3,
                 ScreenManager.Instance.Dimensions.Height/4, buttonWidth, buttonHeight);
         Rectangle multiplayerButtonPos = new Rectangle(ScreenManager.Instance.Dimensions.Width/2,
@@ -32,7 +32,6 @@ namespace Try_To_Die.Screens
                 ScreenManager.Instance.Dimensions.Height/2, buttonWidth, buttonHeight);
 
         
-
 
         Texture2D localButton;
         Texture2D multiplayerButton;
