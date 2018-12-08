@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Audio;
 
 namespace Try_To_Die.Screens
 {
-    public class TitleScreen : GameScreen
+    public class OptionsScreen : GameScreen
     {
         Texture2D BackGround;
         Texture2D mouse;
@@ -98,7 +98,7 @@ namespace Try_To_Die.Screens
                     else if(button.Key.Equals("options"))
                     {
                          buttonClick.Play();
-                         ScreenManager.Instance.ChangeScreen(new OptionsScreen());
+                         ScreenManager.Instance.ChangeScreen(new SplashScreen(), true);
                     }
                     else if(button.Key.Equals("exit"))
                     {
