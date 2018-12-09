@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Animations\AnimationFrame.cs" />
+    <Compile Include="Controllers\PhysicsEngine.cs" />
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Animations\Animation.cs" />

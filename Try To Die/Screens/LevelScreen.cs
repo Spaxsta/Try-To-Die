@@ -16,6 +16,7 @@ namespace Try_To_Die.Screens
         Player player2;
         Controller controller;
         Controller controller2;
+        PhysicsEngine engine = new PhysicsEngine();
 
         List<Entity> sprites = new List<Entity>();
         double timer;
@@ -57,6 +58,7 @@ namespace Try_To_Die.Screens
 
         public override void Update(GameTime gameTime)
         {
+            engine.Update(sprites);
             controller.Update(player, gameTime, sprites);
             controller2.Update(player2, gameTime, sprites);
 

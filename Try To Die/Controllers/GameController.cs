@@ -27,75 +27,9 @@ namespace Try_To_Die.Controllers
 
         public override void Update(Entity entity, GameTime gameTime, List<Entity> sprites)
         {
-            
             UseControllerInput(entity);
             UseKeyboardInputs(entity, gameTime, sprites);
             speed = entity.speed;
-            if(!moving)
-            {
-                entity.speed = 10;
-            }
-
-            foreach(Entity s in sprites)
-            {
-                if(s is Spike)
-                {
-                    List<Entity> spike = new List<Entity>();
-                    spike.Add(s);
-                    if(!CheckLeftCollision(entity, spike) || !CheckRightCollision(entity, spike) || !CheckUpCollision(entity, spike) || !CheckDownCollision(entity, spike))
-                    {
-                        entity.health = 0;
-                    }
-                }
-
-                if(s is BouncePad)
-                {
-                    List<Entity> bouncePad = new List<Entity>();
-                    bouncePad.Add(s);
-                    if (!CheckLeftCollision(entity, bouncePad) || !CheckRightCollision(entity, bouncePad) || !CheckUpCollision(entity, bouncePad) || !CheckDownCollision(entity, bouncePad))
-                    {
-                        timer = 0.6;
-                        bouncing = true;
-                    }
-                }
-            }
-
-            if(timer >= 0)
-            {
-                if (timer > jumpTime/2)
-                {
-                    if (CheckUpCollision(entity, sprites))
-                    {
-                        MoveCommand.MoveUp(entity, 10);
-                    }
-                    else
-                    {
-                        timer = jumpTime / 2;
-                    }
-                } else
-                {
-                    if (CheckDownCollision(entity, sprites))
-                    {
-                        MoveCommand.MoveDown(entity, 10);
-                    }
-                }
-                timer -= gameTime.ElapsedGameTime.TotalSeconds;
-            }
-            else if (CheckDownCollision(entity, sprites))
-            {
-                distanceFallen += 10;
-                MoveCommand.MoveDown(entity, 10);
-            }
-            else 
-            {
-                if (distanceFallen > 200 && !bouncing)
-                {
-                    entity.PlayJumpSound();
-                    entity.health = 0;
-                }
-                bouncing = false;
-                distanceFallen = 0;
-            }
         }
 
         public override void Draw(SpriteBatch spriteBatch)

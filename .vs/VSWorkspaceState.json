@@ -2,12 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\Try To Die",
-    "\\Try To Die\\Application",
-    "\\Try To Die\\Content",
-    "\\Try To Die\\Content\\Sprites",
-    "\\Try To Die\\Controllers",
-    "\\Try To Die\\Screens",
-    "\\Try To Die\\World"
+    "\\Try To Die\\Content"
   ],
+  "SelectedNode": "\\Try To Die.sln",
   "PreviewInSolutionExplorer": false
 }

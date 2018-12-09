@@ -4,17 +4,17 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Logos/logo.png</File>
-    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/BackGround.png</File>
-    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Loading.png</File>
-    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Sprites/man1.png</File>
-    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Sprites/platformSprite.png</File>
-    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/cursor1.png</File>
-    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/buttonClick.wav</File>
-    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Sprites/jump.wav</File>
-    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/bg.wav</File>
-    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Sprites/Spike.png</File>
-    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Sprites/BouncePad.png</File>
-    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Sprites/Pillow.png</File>
+    <File>C:/Users/Curti/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Logos/logo.png</File>
+    <File>C:/Users/Curti/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/BackGround.png</File>
+    <File>C:/Users/Curti/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Loading.png</File>
+    <File>C:/Users/Curti/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Sprites/man1.png</File>
+    <File>C:/Users/Curti/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Sprites/platformSprite.png</File>
+    <File>C:/Users/Curti/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/cursor1.png</File>
+    <File>C:/Users/Curti/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/buttonClick.wav</File>
+    <File>C:/Users/Curti/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Sprites/jump.wav</File>
+    <File>C:/Users/Curti/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/bg.wav</File>
+    <File>C:/Users/Curti/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Sprites/Spike.png</File>
+    <File>C:/Users/Curti/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Sprites/BouncePad.png</File>
+    <File>C:/Users/Curti/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Sprites/Pillow.png</File>
   </SourceFiles>
 </SourceFileCollection>
