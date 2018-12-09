@@ -22,33 +22,36 @@ namespace Try_To_Die.Screens
         static int buttonHeight = 150;
         Dictionary<String, Rectangle> buttons = new Dictionary<String, Rectangle>();
 
-        Rectangle localButtonPos = new Rectangle(ScreenManager.Instance.Dimensions.Width/3,
-                ScreenManager.Instance.Dimensions.Height/4, buttonWidth, buttonHeight);
-        Rectangle multiplayerButtonPos = new Rectangle(ScreenManager.Instance.Dimensions.Width/2,
-                ScreenManager.Instance.Dimensions.Height/4, buttonWidth, buttonHeight);
-        Rectangle optionsButtonPos = new Rectangle(ScreenManager.Instance.Dimensions.Width/3,
-                ScreenManager.Instance.Dimensions.Height/2, buttonWidth, buttonHeight);
-        Rectangle exitButtonPos = new Rectangle(ScreenManager.Instance.Dimensions.Width/2,
-                ScreenManager.Instance.Dimensions.Height/2, buttonWidth, buttonHeight);
+        Rectangle localButtonPos = new Rectangle(ScreenManager.Instance.Dimensions.Width / 3,
+                ScreenManager.Instance.Dimensions.Height / 4, buttonWidth, buttonHeight);
+        Rectangle multiplayerButtonPos = new Rectangle(ScreenManager.Instance.Dimensions.Width / 2,
+                ScreenManager.Instance.Dimensions.Height / 4, buttonWidth, buttonHeight);
+        Rectangle optionsButtonPos = new Rectangle(ScreenManager.Instance.Dimensions.Width / 3,
+                ScreenManager.Instance.Dimensions.Height / 2, buttonWidth, buttonHeight);
+        Rectangle exitButtonPos = new Rectangle(ScreenManager.Instance.Dimensions.Width / 2,
+                ScreenManager.Instance.Dimensions.Height / 2, buttonWidth, buttonHeight);
 
-        
 
+        double timer;
         Texture2D localButton;
         Texture2D multiplayerButton;
         Texture2D optionsButton;
         Texture2D exitButton;
         SoundEffect buttonClick;
+        SoundEffect errorClick;
         Song bgMusic;
 
         public override void LoadContent()
         {
             base.LoadContent();
 
+            timer = 0.5;
             buttons.Add("local", localButtonPos);
             buttons.Add("multiplayer", multiplayerButtonPos);
             buttons.Add("options", optionsButtonPos);
             buttons.Add("exit", exitButtonPos);
-            buttonClick = Content.Load<SoundEffect>("Menu/ButtonClick");
+            buttonClick = Content.Load<SoundEffect>("Menu/selectButton");
+            errorClick = Content.Load<SoundEffect>("Menu/errorButton");
             bgMusic = Content.Load<Song>("Menu/bg");
             Point topLeftPosition = new Point(0, 0);
 
@@ -71,45 +74,49 @@ namespace Try_To_Die.Screens
             MediaPlayer.IsRepeating = true;
 
             MediaPlayer.Play(bgMusic);
+            MediaPlayer.Volume = 0.4F;
         }
 
         public override void Update(GameTime gameTime)
         {
             MouseState mouseClick = Mouse.GetState();
 
-            foreach(var button in buttons)
+            timer -= gameTime.ElapsedGameTime.TotalSeconds;
+            foreach (var button in buttons)
             {
-            if (Mouse.GetState().X > button.Value.Left && Mouse.GetState().X < button.Value.Right && Mouse.GetState().Y > button.Value.Top 
-                && Mouse.GetState().Y < button.Value.Bottom)
-            {
-                if (mouseClick.LeftButton == ButtonState.Pressed)
+                if (Mouse.GetState().X > button.Value.Left && Mouse.GetState().X < button.Value.Right && Mouse.GetState().Y > button.Value.Top
+                    && Mouse.GetState().Y < button.Value.Bottom)
                 {
-                    if(button.Key.Equals("local"))
+                    if (mouseClick.LeftButton == ButtonState.Pressed)
                     {
-                        buttonClick.Play();
-                        ScreenManager.Instance.ChangeScreen(new SplashScreen(), true);
-                        MediaPlayer.Stop();
-                    } 
-                    else if(button.Key.Equals("multiplayer"))
-                    {
+                        if (button.Key.Equals("local"))
+                        {
+                            buttonClick.Play();
+                            ScreenManager.Instance.ChangeScreen(new SplashScreen(), true);
+                            MediaPlayer.Stop();
 
-                    }
-                    else if(button.Key.Equals("options"))
-                    {
-                         buttonClick.Play();
-                         ScreenManager.Instance.ChangeScreen(new OptionsScreen());
-                    }
-                    else if(button.Key.Equals("exit"))
-                    {
-                        Environment.Exit(0);
+                        }
+                        else if (button.Key.Equals("multiplayer")) //this feature isn't implemented yet?
+                        {
+                            errorClick.Play();
+                        }
+                        else if (button.Key.Equals("options") && timer <= 0)
+                        {
+                            buttonClick.Play();
+                            timer = 0.1;
+                            ScreenManager.Instance.ChangeScreen(new OptionsScreen(), true);
+                        }
+                        else if (button.Key.Equals("exit"))
+                        {
+                            Environment.Exit(0);
+                        }
                     }
                 }
-            }
             }
         }
 
         public override void Draw(SpriteBatch spriteBatch)
-        {   
+        {
             spriteBatch.Begin();
             spriteBatch.Draw(BackGround, BackGroundPos, Color.White);
             spriteBatch.Draw(localButton, localButtonPos, Color.White);

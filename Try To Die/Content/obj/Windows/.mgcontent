@@ -20,5 +20,11 @@
     <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/LocalPlay.png</File>
     <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/MultiplayerButton.png</File>
     <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/OptionsButton.png</File>
+    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/selectButton.wav</File>
+    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/errorButton.wav</File>
+    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/MinusButton.png</File>
+    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/PlusButton.png</File>
+    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Menu/ReturnButton.png</File>
+    <File>C:/Users/Devon/Source/Repos/Spaxsta/Try-To-Die/Try To Die/Content/Sprites/jumpSound.wav</File>
   </SourceFiles>
 </SourceFileCollection>

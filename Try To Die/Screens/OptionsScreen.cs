@@ -22,22 +22,19 @@ namespace Try_To_Die.Screens
         static int buttonHeight = 150;
         Dictionary<String, Rectangle> buttons = new Dictionary<String, Rectangle>();
         //List<Rectangle> buttons = new List<Rectangle>();
-        Rectangle localButtonPos = new Rectangle(ScreenManager.Instance.Dimensions.Width/3,
-                ScreenManager.Instance.Dimensions.Height/4, buttonWidth, buttonHeight);
-        Rectangle multiplayerButtonPos = new Rectangle(ScreenManager.Instance.Dimensions.Width/2,
-                ScreenManager.Instance.Dimensions.Height/4, buttonWidth, buttonHeight);
-        Rectangle optionsButtonPos = new Rectangle(ScreenManager.Instance.Dimensions.Width/3,
-                ScreenManager.Instance.Dimensions.Height/2, buttonWidth, buttonHeight);
-        Rectangle exitButtonPos = new Rectangle(ScreenManager.Instance.Dimensions.Width/2,
-                ScreenManager.Instance.Dimensions.Height/2, buttonWidth, buttonHeight);
-
-        
+        Rectangle plusButtonPos = new Rectangle(ScreenManager.Instance.Dimensions.Width / 3,
+                ScreenManager.Instance.Dimensions.Height / 4, buttonWidth, buttonHeight);
+        Rectangle minusButtonPos = new Rectangle(ScreenManager.Instance.Dimensions.Width / 2,
+                ScreenManager.Instance.Dimensions.Height / 4, buttonWidth, buttonHeight);
+        Rectangle returnButtonPos = new Rectangle(ScreenManager.Instance.Dimensions.Width / 3,
+                ScreenManager.Instance.Dimensions.Height / 2, buttonWidth, buttonHeight);
 
 
-        Texture2D localButton;
-        Texture2D multiplayerButton;
-        Texture2D optionsButton;
-        Texture2D exitButton;
+
+        double timer;
+        Texture2D plusButton;
+        Texture2D minusButton;
+        Texture2D returnButton;
         SoundEffect buttonClick;
         Song bgMusic;
 
@@ -45,10 +42,10 @@ namespace Try_To_Die.Screens
         {
             base.LoadContent();
 
-            buttons.Add("local", localButtonPos);
-            buttons.Add("multiplayer", multiplayerButtonPos);
-            buttons.Add("options", optionsButtonPos);
-            buttons.Add("exit", exitButtonPos);
+            timer = 0.5;
+            buttons.Add("plus", plusButtonPos);
+            buttons.Add("minus", minusButtonPos);
+            buttons.Add("return", returnButtonPos);
             buttonClick = Content.Load<SoundEffect>("Menu/ButtonClick");
             bgMusic = Content.Load<Song>("Menu/bg");
             Point topLeftPosition = new Point(0, 0);
@@ -64,59 +61,53 @@ namespace Try_To_Die.Screens
 
             BackGround = Content.Load<Texture2D>("Menu/BackGround");
             mouse = Content.Load<Texture2D>("Menu/Cursor1");
-            localButton = Content.Load<Texture2D>("Menu/LocalPlay");
-            multiplayerButton = Content.Load<Texture2D>("Menu/MultiplayerButton");
-            optionsButton = Content.Load<Texture2D>("Menu/OptionsButton");
-            exitButton = Content.Load<Texture2D>("Menu/ExitButton");
+            plusButton = Content.Load<Texture2D>("Menu/PlusButton");
+            minusButton = Content.Load<Texture2D>("Menu/MinusButton");
+            returnButton = Content.Load<Texture2D>("Menu/ReturnButton");
 
-            MediaPlayer.IsRepeating = true;
-
-            MediaPlayer.Play(bgMusic);
         }
 
         public override void Update(GameTime gameTime)
         {
             MouseState mouseClick = Mouse.GetState();
-
-            foreach(var button in buttons)
+            timer -= gameTime.ElapsedGameTime.TotalSeconds;
+            foreach (var button in buttons)
             {
-            if (Mouse.GetState().X > button.Value.Left && Mouse.GetState().X < button.Value.Right && Mouse.GetState().Y > button.Value.Top 
-                && Mouse.GetState().Y < button.Value.Bottom)
-            {
-                if (mouseClick.LeftButton == ButtonState.Pressed)
+                if (Mouse.GetState().X > button.Value.Left && Mouse.GetState().X < button.Value.Right && Mouse.GetState().Y > button.Value.Top
+                    && Mouse.GetState().Y < button.Value.Bottom)
                 {
-                    if(button.Key.Equals("local"))
+                    if (mouseClick.LeftButton == ButtonState.Pressed)
                     {
-                        buttonClick.Play();
-                        ScreenManager.Instance.ChangeScreen(new SplashScreen(), true);
-                        MediaPlayer.Stop();
-                    } 
-                    else if(button.Key.Equals("multiplayer"))
-                    {
-
-                    }
-                    else if(button.Key.Equals("options"))
-                    {
-                         buttonClick.Play();
-                         ScreenManager.Instance.ChangeScreen(new SplashScreen(), true);
-                    }
-                    else if(button.Key.Equals("exit"))
-                    {
-                        Environment.Exit(0);
+                        if (button.Key.Equals("plus") && timer<= 0)
+                        {
+                            buttonClick.Play();
+                            MediaPlayer.Volume = MediaPlayer.Volume + 0.1F;
+                            timer = 0.1;
+                        }
+                        else if (button.Key.Equals("minus") && timer <= 0)
+                        {
+                            buttonClick.Play();
+                            MediaPlayer.Volume = MediaPlayer.Volume - 0.1F;
+                            timer = 0.1;
+                        }
+                        else if (button.Key.Equals("return") && timer <= 0)
+                        {
+                            buttonClick.Play();
+                            ScreenManager.Instance.ChangeScreen(new TitleScreen(), true);
+                            timer = 0.1;
+                        }
                     }
                 }
-            }
             }
         }
 
         public override void Draw(SpriteBatch spriteBatch)
-        {   
+        {
             spriteBatch.Begin();
             spriteBatch.Draw(BackGround, BackGroundPos, Color.White);
-            spriteBatch.Draw(localButton, localButtonPos, Color.White);
-            spriteBatch.Draw(multiplayerButton, multiplayerButtonPos, Color.White);
-            spriteBatch.Draw(optionsButton, optionsButtonPos, Color.White);
-            spriteBatch.Draw(exitButton, exitButtonPos, Color.White);
+            spriteBatch.Draw(plusButton, plusButtonPos, Color.White);
+            spriteBatch.Draw(minusButton, minusButtonPos, Color.White);
+            spriteBatch.Draw(returnButton, returnButtonPos, Color.White);
             spriteBatch.Draw(mouse, new Rectangle(Mouse.GetState().X, Mouse.GetState().Y, 20, 30), Color.White);
             spriteBatch.End();
         }
