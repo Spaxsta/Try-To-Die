@@ -40,3 +40,9 @@ C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\
 C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\LocalPlay.xnb
 C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\MultiplayerButton.xnb
 C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\OptionsButton.xnb
+C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\errorButton.xnb
+C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\selectButton.xnb
+C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\MinusButton.xnb
+C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\PlusButton.xnb
+C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\ReturnButton.xnb
+C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Sprites\jumpSound.xnb

@@ -37,7 +37,7 @@ namespace Try_To_Die.World
         public override void LoadContent(ContentManager content)
         {
             texture = content.Load<Texture2D>("Sprites/man1");
-            jump = content.Load<SoundEffect>("Sprites/jump");
+            jump = content.Load<SoundEffect>("Sprites/jumpSound");
         }
 
         public override void PlayJumpSound()
