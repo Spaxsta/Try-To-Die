@@ -104,7 +104,8 @@ namespace Try_To_Die.Screens
                         {
                             buttonClick.Play();
                             timer = 0.1;
-                            ScreenManager.Instance.ChangeScreen(new OptionsScreen(), true);
+                            TitleScreen s = this;
+                            ScreenManager.Instance.ChangeScreen(new OptionsScreen(s), true);
                         }
                         else if (button.Key.Equals("exit"))
                         {

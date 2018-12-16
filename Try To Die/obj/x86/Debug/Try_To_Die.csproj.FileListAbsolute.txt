@@ -46,3 +46,51 @@ C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\
 C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\PlusButton.xnb
 C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\ReturnButton.xnb
 C:\Users\Devon\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Sprites\jumpSound.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Sprites\BouncePad.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Sprites\jump.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Sprites\jumpSound.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Sprites\man1.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Sprites\Pillow.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Sprites\platformSprite.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Sprites\Spike.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\BackGround.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\bg.wma
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\bg.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\buttonClick.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\Cursor1.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\errorButton.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\ExitButton.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\LocalPlay.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\MinusButton.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\MultiplayerButton.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\OptionsButton.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\PlusButton.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\ReturnButton.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Menu\selectButton.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Logos\logo.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Content\Loading.xnb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Try To Die.exe
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\Try To Die.pdb
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\obj\x86\Debug\Try_To_Die.csprojAssemblyReference.cache
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\obj\x86\Debug\Try_To_Die.csproj.CoreCompileInputs.cache
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\obj\x86\Debug\Try_To_Die.csproj.CopyComplete
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\obj\x86\Debug\Try To Die.exe
+C:\Users\GGPC\Source\Repos\Spaxsta\Try-To-Die\Try To Die\obj\x86\Debug\Try To Die.pdb

@@ -38,6 +38,13 @@ namespace Try_To_Die.Screens
         SoundEffect buttonClick;
         Song bgMusic;
 
+        private TitleScreen titlescreen;
+
+        public PauseScreen(TitleScreen titlescreen)
+        {
+            this.titlescreen = titlescreen;
+        }
+
         public override void LoadContent()
         {
             base.LoadContent();
@@ -93,7 +100,7 @@ namespace Try_To_Die.Screens
                         else if (button.Key.Equals("return") && timer <= 0)
                         {
                             buttonClick.Play();
-                            ScreenManager.Instance.ChangeScreen(new TitleScreen(), true);
+                            ScreenManager.Instance.ChangeScreen(titlescreen, false);
                             timer = 0.1;
                         }
                     }
